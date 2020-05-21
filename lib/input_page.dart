@@ -4,6 +4,7 @@ import 'ReusableCard.dart';
 import 'IconContent.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'results_page.dart';
 
 enum Gender { Male, Female }
 
@@ -135,7 +136,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             RoundIconButton(
-                              onPress: (){
+                              onPress: () {
                                 setState(() {
                                   weight--;
                                 });
@@ -143,7 +144,7 @@ class _InputPageState extends State<InputPage> {
                               icon: Icons.remove,
                             ),
                             RoundIconButton(
-                              onPress: (){
+                              onPress: () {
                                 setState(() {
                                   weight++;
                                 });
@@ -173,7 +174,7 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             RoundIconButton(
-                              onPress: (){
+                              onPress: () {
                                 setState(() {
                                   age--;
                                 });
@@ -181,7 +182,7 @@ class _InputPageState extends State<InputPage> {
                               icon: Icons.remove,
                             ),
                             RoundIconButton(
-                              onPress: (){
+                              onPress: () {
                                 setState(() {
                                   age++;
                                 });
@@ -197,11 +198,22 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(),
+                ),
+              );
+            },
+            child: Container(
+              child: Text('CALCULATE'),
+              color: kBottomContainerColor,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: kBottomContainerHeight,
+            ),
           ),
         ],
       ),
@@ -209,9 +221,7 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-
 class RoundIconButton extends StatelessWidget {
-
   RoundIconButton({@required this.icon, @required this.onPress});
 
   final Function onPress;
@@ -221,7 +231,7 @@ class RoundIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed:onPress,
+      onPressed: onPress,
       child: Icon(
         icon,
         color: Colors.white,
