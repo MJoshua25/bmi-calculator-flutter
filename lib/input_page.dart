@@ -5,12 +5,7 @@ import 'IconContent.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-
-enum Gender {
-  Male,
-  Female
-}
+enum Gender { Male, Female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -20,7 +15,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
-  int weight = 80;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +31,14 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    onPress: (){
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.Male;
                       });
                     },
-                    color: selectedGender == Gender.Male ? kActiveCardColor : kInactiveCardColor,
+                    color: selectedGender == Gender.Male
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       text: 'MALE',
@@ -50,12 +47,14 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    onPress: (){
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.Female;
                       });
                     },
-                    color: selectedGender == Gender.Female ? kActiveCardColor : kInactiveCardColor,
+                    color: selectedGender == Gender.Female
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
                       text: 'FEMALE',
@@ -95,14 +94,16 @@ class _InputPageState extends State<InputPage> {
                       activeTrackColor: Colors.white,
                       thumbColor: Color(0xFFEB1555),
                       overlayColor: Color(0x29EB1555),
-                      thumbShape: RoundSliderThumbShape(enabledThumbRadius:15.0),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                      overlayShape:
+                          RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
                       min: 120.0,
                       max: 220.0,
-                      onChanged: (double newValue){
+                      onChanged: (double newValue) {
                         setState(() {
                           height = newValue.round();
                         });
@@ -125,6 +126,39 @@ class _InputPageState extends State<InputPage> {
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            FloatingActionButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              backgroundColor: Color(0xFF4C4F5E),
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),
+                            ),
+                            FloatingActionButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                              backgroundColor: Color(0xFF4C4F5E),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -146,7 +180,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
-
-
