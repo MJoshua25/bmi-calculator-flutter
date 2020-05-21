@@ -16,8 +16,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-
   bool isMale = true;
+
+  Color maleCardColor = activeCardColor;
+  Color femaleCardColor = inactiveCardColor;
 
   @override
   Widget build(BuildContext context) {
