@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../components/BottomButton.dart';
-import '../components/ReusableCard.dart';
-import '../IconContent.dart';
+import 'package:bmi_calculator/components/BottomButton.dart';
+import 'package:bmi_calculator/components/ReusableCard.dart';
+import 'package:bmi_calculator/components/IconContent.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'results_page.dart';

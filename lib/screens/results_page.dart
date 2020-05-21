@@ -1,5 +1,5 @@
-import 'file:///C:/Users/jyao2/Documents/Code/Flutter_project/bmi-calculator-flutter/lib/components/BottomButton.dart';
-import 'Reu';
+import 'package:bmi_calculator/components/BottomButton.dart';
+import 'package:bmi_calculator/components/ReusableCard.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 
@@ -44,7 +44,9 @@ class ResultsPage extends StatelessWidget {
                   ),
                   BottomButton(
                     text: 'Re-Calculate',
-                    tap: Navigator.pop(context),
+                    tap: (){
+                      Navigator.pop(context);
+                    },
                   ),
                 ],
               ),
