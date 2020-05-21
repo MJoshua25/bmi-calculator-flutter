@@ -133,29 +133,21 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            FloatingActionButton(
-                              onPressed: () {
+                            RoundIconButton(
+                              onPress: (){
                                 setState(() {
                                   weight--;
                                 });
                               },
-                              backgroundColor: Color(0xFF4C4F5E),
-                              child: Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                              ),
+                              icon: Icons.remove,
                             ),
-                            FloatingActionButton(
-                              onPressed: () {
+                            RoundIconButton(
+                              onPress: (){
                                 setState(() {
                                   weight++;
                                 });
                               },
-                              backgroundColor: Color(0xFF4C4F5E),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
+                              icon: Icons.add,
                             ),
                           ],
                         ),
@@ -184,15 +176,20 @@ class _InputPageState extends State<InputPage> {
 
 class RoundIconButton extends StatelessWidget {
 
-  RoundIconButton({this.icon});
+  RoundIconButton({this.icon, this.onPress});
+
+  final Function onPress;
 
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed:() {},
-      child: Icon(icon),
+      onPressed:onPress,
+      child: Icon(
+        icon,
+        color: Colors.white,
+      ),
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(
         width: 56.0,
