@@ -8,6 +8,7 @@ const bottomContainerHeight = 80.0;
 const bottomContainerColor = Color(0xFFEB1555);
 
 const activeCardColor = Color(0xFF1D1E33);
+const inactiveCardColor = Color(0xFF111328);
 
 class InputPage extends StatefulWidget {
   @override
@@ -27,18 +28,25 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      text: 'MALE',
+                  child: GestureDetector(
+                    onTap: (){
+                      print('Male card was pressed');
+                    },
+                    child: ReusableCard(
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        text: 'MALE',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      text: 'FEMALE',
+                  child: GestureDetector(
+                    child: ReusableCard(
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        text: 'FEMALE',
+                      ),
                     ),
                   ),
                 ),
