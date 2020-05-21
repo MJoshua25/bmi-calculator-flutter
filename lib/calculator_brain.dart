@@ -7,15 +7,17 @@ class CalculatorBrain{
   final int height;
   final int weight;
 
+  double _bmi;
+
   String calculateBMI(){
-    double bmi = weight / pow(height/100, 2);
-    return bmi.toStringAsFixed(1);
+    _bmi = weight / pow(height/100, 2);
+    return _bmi.toStringAsFixed(1);
   }
 
   String getResult(){
-    if(bmi>=25){
+    if(_bmi>=25){
       return 'Overweight';
-    } else if (bmi > 18.5) {
+    } else if (_bmi > 18.5) {
       return 'normal';
     } else {
       return 'Underweight';
