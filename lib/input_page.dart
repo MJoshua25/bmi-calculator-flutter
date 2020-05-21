@@ -74,13 +74,15 @@ class _InputPageState extends State<InputPage> {
                     style: kLabelTextStyle,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         '180',
-                        style: TextStyle(
-                          fontSize: 50.0,
-                          fontWeight: FontWeight.w900,
-                        ),
+                        style: kNumberTextStyle,
+                      ),
+                      Text(
+                        'cm',
+                        style: kLabelTextStyle,
                       ),
                     ],
                   )
