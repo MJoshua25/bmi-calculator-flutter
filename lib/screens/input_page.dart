@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'BottomButton.dart';
-import 'ReusableCard.dart';
-import 'IconContent.dart';
-import 'constants.dart';
+import '../components/BottomButton.dart';
+import '../components/ReusableCard.dart';
+import '../IconContent.dart';
+import '../constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'results_page.dart';
 
