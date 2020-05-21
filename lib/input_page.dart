@@ -16,6 +16,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
+  bool isMale = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +33,12 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: GestureDetector(
                     onTap: (){
-                      print('Male card was pressed');
+                      setState(() {
+                        isMale = true;
+                      });
                     },
                     child: ReusableCard(
+                      color: isMale ? activeCardColor : inactiveCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
                         text: 'MALE',
@@ -42,7 +48,13 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        isMale = false;
+                      });
+                    },
                     child: ReusableCard(
+                      color: isMale ? inactiveCardColor : activeCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.venus,
                         text: 'FEMALE',
