@@ -1,8 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const kLabelTextStyle = TextStyle(
     color: Color(0xFF8D8E98),
     fontSize:18.0
+);
+
+const kLargeButtonTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
 );
 
 const kNumberTextStyle = TextStyle(
