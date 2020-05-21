@@ -39,7 +39,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = Gender.Male;
                       });
                     },
-                    color: selectedGender == Gender.Male ? activeCardColor : inactiveCardColor,
+                    color: selectedGender == Gender.Male ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       text: 'MALE',
@@ -53,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = Gender.Female;
                       });
                     },
-                    color: selectedGender == Gender.Female ? activeCardColor : inactiveCardColor,
+                    color: selectedGender == Gender.Female ? kActiveCardColor : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
                       text: 'FEMALE',
@@ -69,7 +69,7 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Text(
                     'Height',
-                    style: labelTextStyle,
+                    style: kLabelTextStyle,
                   ),
                 ],
               ),
@@ -88,10 +88,10 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),

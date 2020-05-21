@@ -3,7 +3,7 @@ import 'constants.dart';
 
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({this.color = activeCardColor, this.cardChild, this.onPress});
+  ReusableCard({this.color = kActiveCardColor, this.cardChild, this.onPress});
 
   final Color color;
   final Widget cardChild;
