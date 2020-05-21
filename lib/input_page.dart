@@ -16,6 +16,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
   int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +157,42 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            RoundIconButton(
+                              onPress: (){
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              icon: Icons.remove,
+                            ),
+                            RoundIconButton(
+                              onPress: (){
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              icon: Icons.add,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -176,7 +212,7 @@ class _InputPageState extends State<InputPage> {
 
 class RoundIconButton extends StatelessWidget {
 
-  RoundIconButton({this.icon, this.onPress});
+  RoundIconButton({@required this.icon, @required this.onPress});
 
   final Function onPress;
 
