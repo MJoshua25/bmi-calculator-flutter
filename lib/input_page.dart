@@ -70,51 +70,6 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class IconContent extends StatelessWidget {
-  IconContent({this.icon, this.text});
 
-  final IconData icon;
-  final String text;
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          icon,
-          size: 80.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Color(0xFF8D8E98),
-          ),
-        )
-      ],
-    );
-  }
-}
 
-class ReusableCard extends StatelessWidget {
-  ReusableCard({this.color = activeCardColor, this.cardChild});
-
-  final Color color;
-  final Widget cardChild;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      child: cardChild,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: color,
-      ),
-    );
-  }
-}
